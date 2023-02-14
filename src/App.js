@@ -4,7 +4,6 @@ import Meals from "./components/Meals/Meals";
 import CartContext from "./store/cart-context";
 import FilerMeals from "./components/FilterMeals/FilerMeals";
 import Cart from "./components/Cart/Cart";
-import Backdrop from "./components/UI/Backdrop/Backdrop";
 // 模拟一组食物数据
 const MEALS_DATA = [
     {
@@ -88,10 +87,19 @@ const App = () => {
         newCart.totalAmount-=1;
         newCart.totalPrice-=meal.price;
         setCartData(newCart)
+    };
+
+    const clearCart=()=>{
+        const newCart={...cartData};
+        newCart.items.forEach(item=>delete item.amount);
+        newCart.items=[];
+        newCart.totalAmount=0;
+        newCart.totalPrice=0;
+        setCartData(newCart)
     }
     return (
 
-        <CartContext.Provider value={{...cartData,addItem,removeItem}}>
+        <CartContext.Provider value={{...cartData,addItem,removeItem,clearCart}}>
             <div >
                 <FilerMeals onFilter={filterHandler}/>
                 <Meals mealsData={mealsData}/>

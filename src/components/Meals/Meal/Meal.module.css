@@ -39,3 +39,6 @@ img{
     content: '￥';
     font-size: 12px;
 }
+.DescBox{
+    flex:auto;
+}
