@@ -8,6 +8,7 @@ const Cart = () => {
     const ctx=useContext(CartContext);
     const [showDetails,setShowDetails]=useState(false);
     const [showCheckout,setShowCheckout]=useState(false);
+    if(ctx.toto)
     const toggleDetialsHandler=()=>{
         if(ctx.totalAmount===0) {
             setShowDetails(false);
