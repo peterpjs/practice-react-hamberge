@@ -8,18 +8,13 @@ const FilerMeals = (props) => {
     useEffect(()=>{
         const timer=setTimeout(()=>{
             props.onFilter(keyword);
-            console.log("aaaaaa")
-
         },1000 )
         return ()=>{
             clearTimeout(timer);
         }
-
     },[keyword])
     const inputChangeHandler= e=>{
-        console.log("sdfsdfdfsdf")
         setKeyword(e.target.value.trim());
-        // props.onFilter(keyword);
     }
     return (
         <div className={classes.FilterMeals}>

@@ -15,7 +15,7 @@ const CartDetails = () => {
         setShowConfirm(true)
     }
     const  okHandler=()=>{
-        ctx.clearCart();
+        ctx.cartDispatch({type:'CLEAR'});
     }
     const cancelHandler=(e)=>{
         e.stopPropagation();
