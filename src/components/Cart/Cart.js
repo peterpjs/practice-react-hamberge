@@ -14,7 +14,15 @@ const Cart = () => {
             setShowDetails(false);
             setShowCheckout(false);
         }
-    })
+    },[ctx ])
+
+    // useEffect(()=>{
+    //     console.log("sdfasdf")
+    //     if(ctx.totalAmount===0){
+    //         setShowDetails(false);
+    //         setShowCheckout(false);
+    //     }
+    // },[ ])
     const toggleDetialsHandler=()=>{
         if(ctx.totalAmount===0) {
             setShowDetails(false);
