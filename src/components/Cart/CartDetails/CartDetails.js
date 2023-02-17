@@ -11,7 +11,7 @@ const CartDetails = () => {
 
     const [showConfirm,setShowConfirm]=useState(false);
 
-    const showConfirmHandler=(e)=>{
+    const showConfirmHandler=()=>{
         setShowConfirm(true)
     }
     const  okHandler=()=>{
